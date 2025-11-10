@@ -46,14 +46,15 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 }
-afterEvaluate {
-    publishing {
-        publications {
-            create<MavenPublication>("release") {
+publishing {
+    publications {
+        create<MavenPublication>("release") {
+            groupId = "com.github.mohammadsauddeveloper"
+            artifactId = "CustomButton"
+            version = "v1.0.0"
+
+            afterEvaluate {
                 from(components["release"])
-                groupId = "com.github.saudattari"
-                artifactId = "custombutton"
-                version = "1.0.0"
             }
         }
     }
